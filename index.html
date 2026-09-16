@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEEP//DRILLER</title>
+  <link rel="stylesheet" href="style.css?v=workbench-world-3">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">◆</span><div><b>DEEP//DRILLER</b><small>MINING SYSTEMS ONLINE</small></div></div>
+      <div class="top-status"><span class="online-dot"></span> SESSION <strong id="session-score">0</strong><span class="divider"></span> BEST <strong id="best-score">0</strong></div>
+    </header>
+
+    <section class="game-layout">
+      <aside class="sidebar left-panel">
+        <div class="panel-heading"><span>01</span> MISSION CONTROL</div>
+        <div class="planet-card">
+          <div class="planet-orb terra-orb"></div>
+          <div><strong id="planet-name">TERRA-8</strong><small id="planet-subtitle">FRONTIER SOIL</small></div>
+        </div>
+        <div class="objective"><small>OBJECTIVE</small><strong id="objective-text">Extraire 180₡ de minerais</strong><div class="progress-line"><i id="objective-progress"></i></div><span id="objective-count">0 / 180₡</span></div>
+        <div class="stat-stack">
+          <div class="stat-row"><span>DEPTH</span><b><em id="depth-value">0</em> M</b></div>
+          <div class="stat-row"><span>RUN VALUE</span><b class="cyan"><em id="run-value">0</em>₡</b></div>
+          <div class="stat-row"><span>COMBO</span><b class="gold">x<em id="combo-value">1</em></b></div>
+        </div>
+        <div class="event-box"><span class="event-icon">!</span><div><small>DEEP SIGNAL</small><p id="event-text">Le sol est calme. Descends pour trouver du quartz.</p></div></div>
+        <div class="help"><span>ARROWS</span> MOVE / DRILL<br><span>SPACE</span> BOOST / DRONE<br><span>R</span> RAPATRIER AU COFFRE</div>
+      </aside>
+
+      <section class="play-area">
+        <div class="canvas-frame"><canvas id="game-canvas" width="256" height="384" aria-label="Zone de forage interactive"></canvas><div class="scanlines"></div><div class="depth-marker"><span id="marker-depth">000M</span></div><section id="world-workbench-panel" class="world-workbench-panel" aria-label="Améliorations de l’établi"><div class="panel-heading"><span>03</span> WORKBENCH <small id="world-credits-label">0₡</small></div><div id="world-upgrade-list"></div></section></div>
+        <div class="mobile-controls" aria-label="Contrôles tactiles"><button data-key="ArrowLeft">◀</button><button data-key="ArrowUp">▲</button><button data-key="ArrowDown">▼</button><button data-key="ArrowRight">▶</button><button data-key="Space" class="boost">✦</button></div>
+        <button id="return-button" hidden></button>
+      </section>
+
+      <aside class="sidebar right-panel">
+        <div class="panel-heading"><span>02</span> SYSTEMS</div>
+        <div class="meter"><div class="meter-label"><span>BATTERY</span><b id="battery-label">100%</b></div><div class="meter-track"><i id="battery-bar" class="battery-bar"></i></div></div>
+        <div class="meter"><div class="meter-label"><span>FUEL</span><b id="fuel-label">100%</b></div><div class="meter-track"><i id="fuel-bar" class="fuel-bar"></i></div></div>
+        <div class="meter"><div class="meter-label"><span>HEAT</span><b id="heat-label">12°</b></div><div class="meter-track"><i id="heat-bar" class="heat-bar"></i></div></div>
+        <div class="cargo-head"><span>CARGO HOLD</span><b><em id="cargo-count">0</em> / <span id="cargo-capacity">12</span></b></div><div class="cargo-track"><i id="cargo-bar"></i></div><div id="cargo-list" class="cargo-list"><span class="empty-cargo">CARGO EMPTY</span></div>
+      </aside>
+    </section>
+
+    <footer class="footer mission-footer"><div class="mission-footer-head"><div class="mission-planet"><small>PLANET <b id="footer-planet-index">01</b> / 04</small><strong id="footer-planet-name">TERRA-8</strong></div></div><div class="mission-progress"><i id="footer-progress-bar"></i><strong id="footer-credits">0₡</strong><span id="footer-progress-value">0 / 180₡</span></div><div class="mission-objective"><small>OBJECTIVE</small><strong id="footer-objective">Extraire 180₡ de minerais</strong></div></footer>
+  </main>
+  <div id="toast" class="toast"></div><span id="credits-label" hidden></span><span id="planet-index" hidden></span>
+  <script src="game.js?v=single-release-33"></script>
+</body>
+</html>
